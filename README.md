@@ -3,6 +3,7 @@
 - ArcGIS JavaScript API v4
 - Bootstrap v4
 - Typescript transpiling
+- Gulp build & watch tasks /w LiveReload
 - Testing w/ Karma & Jasmine
 
 ## Install

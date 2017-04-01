@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +11,16 @@
   <script>
     var locationPath = location.pathname.replace(/\/[^\/]+$/, "");
     window.dojoConfig = {
-      packages: [{
-        name: "app",
-        location: locationPath + "/js"
-      }]
+      packages: [
+        {
+          name: "app",
+          location: locationPath + "js"
+        }, {
+          name: "rxjs",
+          location: "https://unpkg.com/rxjs@5.2.1-smooth/bundles",
+          main: "Rx.min"
+        }
+      ]
     };
   </script>
 </head>

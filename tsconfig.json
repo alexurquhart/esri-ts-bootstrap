@@ -10,12 +10,10 @@
     "preserveConstEnums": true,
     "suppressImplicitAnyIndexErrors": true,
     "outDir": "dist/js",
-    "types": [ "arcgis-js-api", "dojo" ]
+    "types": ["arcgis-js-api", "dojo", "es6-shim"]
   },
   "include": [
-    "src/js/**/*"
-  ],
-  "exclude": [
-    "node_modules"
+    "src/js/**/*",
+    "node_modules/rxjs/**/*.d.ts"
   ]
 }

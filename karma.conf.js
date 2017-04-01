@@ -24,7 +24,7 @@ module.exports = function(config) {
       options: {
         "module": "amd",
         "noImplicitAny": true,
-        "sourceMap": true,
+        "sourceMap": false,
         "jsx": "react",
         "reactNamespace": "jsxFactory",
         "target": "es5",
