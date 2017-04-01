@@ -3,34 +3,40 @@ module.exports = function(config) {
   config.set({
     basePath: '',
 
-    frameworks: ['jasmine', 'dojo', 'karma-typescript'],
-
-    karmaTypescriptConfig: {
-      tsconfig: './tsconfig.json'
-    },
+    frameworks: ['jasmine', 'dojo'],
 
     files: [
       'tests/main.js',
-      {pattern: 'src/**/*.+(ts|tsx)', included: false},
+      {pattern: 'src/**/*.+(ts|tsx|js)', included: false},
       {pattern: 'tests/**/*.+(ts|tsx|js)', included: false}
     ],
 
     reporters: [
-      'dots',
-      'coverage',
-      'karma-typescript'
+      'dots'
     ],
 
-    coverageReporter: {
-      type : 'html',
-      dir : 'coverage/',
-      instrumenterOptions: {
-        istanbul: { noCompact: true }
-      }
+    preprocessors: {
+      'src/**/*.+(ts|tsx)': ['typescript'],
+      'tests/**/*.+(ts|tsx)': ['typescript']
     },
 
-    preprocessors: {
-      'src/**/*.+(ts|tsx)': ['coverage', 'karma-typescript']
+    typescriptPreprocessor: {
+      options: {
+        "module": "amd",
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "jsx": "react",
+        "reactNamespace": "jsxFactory",
+        "target": "es5",
+        "experimentalDecorators": true,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "concatenateOutput": false,
+        "types": [ "arcgis-js-api", "dojo" ]
+      },
+      transformPath: function(path) {
+        return path.replace(/\.ts$/, '.js');
+      }
     },
 
     port: 9876,
@@ -57,8 +63,7 @@ module.exports = function(config) {
       'karma-dojo',
       'karma-jasmine',
       'karma-chrome-launcher',
-      'karma-coverage',
-      'karma-typescript'
+      'karma-typescript-preprocessor'
     ],
 
     singleRun: false

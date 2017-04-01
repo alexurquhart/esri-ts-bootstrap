@@ -11,13 +11,12 @@
 
   const API_LOCATION = 'http://js.arcgis.com/4.3/';
 
-
   window.dojoConfig = {
     packages: [
       // local pacakges to test
       {
         name: 'app',
-        location: '/base/dist/js'
+        location: '/base/src/js'
       },
 
       // esri/dojo packages

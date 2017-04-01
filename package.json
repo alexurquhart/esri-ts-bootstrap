@@ -11,6 +11,7 @@
   "dependencies": {
     "@types/arcgis-js-api": "^4.3.0",
     "@types/dojo": "^1.9.37",
+    "@types/jasmine": "^2.5.47",
     "bootstrap": "^4.0.0-alpha.6",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
@@ -25,7 +26,7 @@
     "karma-coverage": "^1.1.1",
     "karma-dojo": "0.0.1",
     "karma-jasmine": "^1.1.0",
-    "karma-typescript": "^2.1.7",
+    "karma-typescript-preprocessor": "^0.3.1",
     "st": "^1.2.0",
     "tslint": "^5.0.0",
     "typescript": "^2.2.2"
