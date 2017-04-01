@@ -1,23 +1,16 @@
-import * as EsriMap from 'esri/Map';
-import * as MapView from 'esri/views/MapView';
+import MapController from 'app/MapController';
 
 describe('Map Controller Tests', () => {
-  it('should do stuff', () => {
-    const mapNode = document.createElement('div');
-    mapNode.id = "map";
-    document.body.appendChild(mapNode);
+  beforeEach(() => {
+    let div = document.createElement('div');
+    div.id = 'map';
+    document.body.appendChild(div);
+  });
 
-    const map = new EsriMap({
-      basemap: "streets"
-    });
-
-    const view = new MapView({
-      map: map,
-      container: "map",
-      center: [-118.244, 34.052],
-      zoom: 12
-    });
-
-    expect(1).toBeTruthy();
-  })
+  it('It should create a map', () => {
+    let mc = new MapController('map');
+    expect(mc).toBeTruthy();
+    let mapNode = document.querySelector('#map');
+    expect(mapNode.classList.contains('esri-view')).toBeTruthy();
+  });
 });
